@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 
-import { ToastContext } from '@/Contexts/ToastContext';
+import { ToastContext } from '../../Contexts/ToastContext';
 
 import { ToastContainer, Icon, Text, Title, Cancel } from './style';
 

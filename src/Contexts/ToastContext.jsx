@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-import ToastList from '@/Components/ToastList';
-import usePortal from '@/hooks/usePortal';
-import Toaster from '@/Toaster';
-import ToastBoundary from '@/ErrorBoundary/ToastBoundary';
+import ToastList from '../Components/ToastList';
+import usePortal from '../hooks/usePortal';
+import Toaster from '../Toaster';
+import ToastBoundary from '../ErrorBoundary/ToastBoundary';
 
 export const ToastContext = React.createContext();
 

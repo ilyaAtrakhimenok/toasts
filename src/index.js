@@ -1,10 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import {ToastContext, ToastProvider} from './Contexts/ToastContext'
+import Toaster from './Toaster'
+import Toast from './Components/Toast'
+import {textColors, sizes, icons,  colors, titles} from './consts'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+export {ToastContext, ToastProvider, Toaster, Toast, textColors,sizes, icons, colors, titles}
+
+

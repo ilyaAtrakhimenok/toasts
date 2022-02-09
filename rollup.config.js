@@ -1,9 +1,10 @@
 import babel from 'rollup-plugin-babel';
-import resolve from '@rollup/plugin-node-resolve';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
 import external from 'rollup-plugin-peer-deps-external';
 import { terser } from 'rollup-plugin-terser';
 import postcss from 'rollup-plugin-postcss';
-import alias from 'rollup-plugin-alias'
+import alias from '@rollup/plugin-alias';
+import extensions from 'rollup-plugin-extensions';
 export default [
   {
     input: './src/index.js',
@@ -23,17 +24,24 @@ export default [
         plugins: [],
         minimize: true,
       }),
-      babel({
-        exclude: 'node_modules/**',
-        presets: ['@babel/preset-react']
+      extensions({
+        extensions: ['.jsx', '.js'],
       }),
       alias({
+        resolve: [".js", ".jsx", '/index.js', '/index.jsx'],
         entries: [
           { find: '@', replacement: './src' },
         ]
       }),
+      babel({
+        exclude: 'node_modules/**',
+        presets: ['@babel/preset-react']
+      }),
       external(),
-      resolve(),
+      nodeResolve({
+        extensions: ['.js', '.jsx'],
+        module: true,
+      }),
       terser(),
     ],
     external: ['styled-components'],

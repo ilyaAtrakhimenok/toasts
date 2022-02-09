@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { GlobalStyle } from '@/globalStyles';
-import { ToastProvider } from '@/Contexts/ToastContext';
+import { GlobalStyle } from '../globalStyles';
+import { ToastProvider } from '../Contexts/ToastContext';
 
 import Creator from '../Components/Creator';
 

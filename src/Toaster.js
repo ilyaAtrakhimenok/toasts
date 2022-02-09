@@ -1,17 +1,14 @@
 import getDefaultToastValues from './units/defaultToasts';
 
-import { sizes } from '@/consts';
+import { sizes } from './consts';
 
 const { ICON_SIZE, TEXT_SIZE } = sizes;
 
 export default class Toaster {
-  static #IDENTIFIER = 0;
+  static _IDENTIFIER = 0;
   static defineUniqId() {
-    return Toaster.#IDENTIFIER++;
+    return Toaster._IDENTIFIER++;
   }
-
-  #id;
-  #isAnimated;
 
   constructor(type, text, properties) {
     const [color, icon, title, textColor] = getDefaultToastValues(type);
@@ -31,21 +28,21 @@ export default class Toaster {
       timing: this.timing = 0,
       icon: this.icon = icon,
       iconSize: this.iconSize = ICON_SIZE,
-      id: this.#id = Toaster.defineUniqId(),
-      isAnimated: this.#isAnimated = true,
+      id: this._id = Toaster.defineUniqId(),
+      isAnimated: this._isAnimated = true,
       animationName: this.animationName = 'side-push',
       animationDuration: this.animationDuration = 1.5,
     } = properties);
   }
 
   get id() {
-    return this.#id;
+    return this._id;
   }
   set isAnimated(a) {
-    this.#isAnimated = Boolean(a);
+    this._isAnimated = Boolean(a);
   }
   get isAnimated() {
-    return this.#isAnimated;
+    return this._isAnimated;
   }
 
   remove(removeFn) {

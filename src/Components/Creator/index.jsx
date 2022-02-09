@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
-import { ToastContext } from '@/Contexts/ToastContext';
-import { colors } from '@/consts';
+import { ToastContext } from '../../Contexts/ToastContext';
+import { colors } from '../../consts';
 
 import { Button, Container } from './style';
 
