@@ -6,7 +6,6 @@ import { ToastContext } from '@/Contexts/ToastContext';
 import { ToastContainer, Icon, Text, Title, Cancel } from './style';
 
 export default function Toast({ toaster }) {
-
   const { removeToast, position } = useContext(ToastContext);
   const [del, setDelition] = useState(false);
 
@@ -20,13 +19,10 @@ export default function Toast({ toaster }) {
   const remove = useCallback(() => {
     toaster.remove(() => removeToast(id));
     setDelition(true);
-  },[toaster]);
+  }, [toaster]);
 
   return (
-    <ToastContainer
-      config={toaster}
-      position={position}
-    >
+    <ToastContainer config={toaster} position={position}>
       <Title>{title}</Title>
       <Icon icon={icon} iconSize={iconSize}></Icon>
       <Text textSize={textSize}>{text}</Text>

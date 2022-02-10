@@ -9,28 +9,30 @@ import {
   TOAST_GRID_COLUMNS,
   TOAST_SHADOW,
   TOAST_FONT,
-  TOAST_CANCEL_SIZE
-} from '@/consts'
+  TOAST_CANCEL_SIZE,
+} from '@/consts';
 
 const space = (props) => {
   const marg = props.config.spacing;
   if (marg instanceof Array) {
-    return `${marg[0] || 30}px ${marg[1] || 10}px ${marg[2] || 5}px ${marg[3] || 10
-      }px`;
+    return `${marg[0] || 30}px ${marg[1] || 10}px ${marg[2] || 5}px ${
+      marg[3] || 10
+    }px`;
   } else {
     return marg ? `${marg}px` : '30px 10px 5px 10px';
   }
 };
 
-const width = (props) => props.config.width
-const height = (props) => props.config.height
-const animationName = (props) => props.config.isAnimated
-  ? animation(props.config.animationName, props.position)
-  : 'none'
-const background = (props) => props.config.color
-const duration = (props) =>  props.config.animationDuration
-const textColor = (props) =>   props.config.textColor;
-const textSize = (props) => props.textSize
+const width = (props) => props.config.width;
+const height = (props) => props.config.height;
+const animationName = (props) =>
+  props.config.isAnimated
+    ? animation(props.config.animationName, props.position)
+    : 'none';
+const background = (props) => props.config.color;
+const duration = (props) => props.config.animationDuration;
+const textColor = (props) => props.config.textColor;
+const textSize = (props) => props.textSize;
 const icon = (props) => props.icon;
 const iconSize = (props) => props.iconSize;
 const TITLE_TOP = -20;
@@ -82,7 +84,7 @@ export const Title = styled.div`
   position: absolute;
   top: ${TITLE_TOP}px;
   left: ${TITLE_LEFT}px;
-  font-size: ${textSize/ 1.5}px;
+  font-size: ${textSize / 1.5}px;
   color: black;
 `;
 

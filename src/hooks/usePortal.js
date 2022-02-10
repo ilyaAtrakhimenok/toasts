@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 
-import { createPortalContainer, removePortalContainer } from '@/units/portalContainer';
+import {
+  createPortalContainer,
+  removePortalContainer,
+} from '@/units/portalContainer';
 
 export default function usePortal(position) {
   const [load, setLoad] = useState(() => createPortalContainer(position));

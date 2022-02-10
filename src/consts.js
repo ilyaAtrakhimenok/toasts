@@ -31,8 +31,8 @@ const DEFAULT_WIDTH = 340;
 const DEFAULT_HEIGHT = 75;
 const DEFAULT_SPACING = 0;
 const DEFAULT_TIMING = 0;
-const DEFAULT_ANIMATION = 'side-push'
-const DEFAULT_DURATION = 1.5
+const DEFAULT_ANIMATION = 'side-push';
+const DEFAULT_DURATION = 1.5;
 
 export const MOBILE = 568;
 
@@ -40,26 +40,26 @@ export const TOAST_BORDER_RADIUS = 7;
 export const TOAST_PADDING = 10;
 export const TOAST_GRID_COLUMNS = '18% 72% 10%';
 export const TOAST_FONT = 'helvetica';
-export const TOAST_SHADOW = '5px 5px 10px 2px rgba(11,11,11,0.3)'
+export const TOAST_SHADOW = '5px 5px 10px 2px rgba(11,11,11,0.3)';
 export const TOAST_CANCEL_SIZE = 18;
 
 export const positions = {
-    POSITION_TOP_LEFT,
-    POSITION_TOP_RIGHT,
-    POSTION_BOTTOM_LEFT,
-    POSTION_BOTTOM_RIGHT,
-    POSITION_TOP_MIDDLE,
-    POSITION_BOTTOM_MIDDLE
-}
+  POSITION_TOP_LEFT,
+  POSITION_TOP_RIGHT,
+  POSTION_BOTTOM_LEFT,
+  POSTION_BOTTOM_RIGHT,
+  POSITION_TOP_MIDDLE,
+  POSITION_BOTTOM_MIDDLE,
+};
 
 export const defaults = {
-    DEFAULT_WIDTH,
-    DEFAULT_HEIGHT,
-    DEFAULT_SPACING,
-    DEFAULT_TIMING,
-    DEFAULT_ANIMATION,
-    DEFAULT_DURATION
-}
+  DEFAULT_WIDTH,
+  DEFAULT_HEIGHT,
+  DEFAULT_SPACING,
+  DEFAULT_TIMING,
+  DEFAULT_ANIMATION,
+  DEFAULT_DURATION,
+};
 
 export const textColors = { TEXT_COLOR_DARK, TEXT_COLOR_LIGHT };
 export const sizes = { CANCEL_SIZE, ICON_SIZE, TEXT_SIZE };

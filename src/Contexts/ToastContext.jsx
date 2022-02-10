@@ -8,7 +8,6 @@ import ToastBoundary from '@/ErrorBoundary/ToastBoundary';
 export const ToastContext = React.createContext();
 
 export function ToastProvider(props) {
-  
   const { children, position = 'bottom-right', limit = 5 } = props;
 
   const [toastList, setToastList] = useState([]);
@@ -31,21 +30,18 @@ export function ToastProvider(props) {
         return item.id !== id;
       });
     });
-  },[]);
+  }, []);
 
-  const config = useMemo(()=>{
+  const config = useMemo(() => {
     return {
       addToast,
       removeToast,
-      position
-    }
-  }, [position])
+      position,
+    };
+  }, [position]);
 
   return (
-    <ToastContext.Provider
-      value={config}
-      {...props}
-    >
+    <ToastContext.Provider value={config} {...props}>
       <ToastBoundary>
         <ToastList toastList={toastList} />
         {children}

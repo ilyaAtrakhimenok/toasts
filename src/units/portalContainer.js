@@ -1,4 +1,4 @@
-import {positions} from '@/consts'
+import { positions } from '@/consts';
 
 const {
   POSITION_TOP_LEFT,
@@ -6,15 +6,15 @@ const {
   POSTION_BOTTOM_LEFT,
   POSTION_BOTTOM_RIGHT,
   POSITION_TOP_MIDDLE,
-  POSITION_BOTTOM_MIDDLE
-} = positions
+  POSITION_BOTTOM_MIDDLE,
+} = positions;
 
 const position = {
   'top-left': POSITION_TOP_LEFT,
   'top-right': POSITION_TOP_RIGHT,
   'bottom-left': POSTION_BOTTOM_LEFT,
   'bottom-right': POSTION_BOTTOM_RIGHT,
-  'top-middle':  POSITION_TOP_MIDDLE,
+  'top-middle': POSITION_TOP_MIDDLE,
   'bottom-middle': POSITION_BOTTOM_MIDDLE,
 };
 

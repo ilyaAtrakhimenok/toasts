@@ -1,6 +1,14 @@
 import getDefaultToastValues from './units/defaultToasts';
+import { sizes, defaults } from './consts';
 
-import { sizes } from './consts';
+const {
+  DEFAULT_WIDTH,
+  DEFAULT_HEIGHT,
+  DEFAULT_SPACING,
+  DEFAULT_TIMING,
+  DEFAULT_ANIMATION,
+  DEFAULT_DURATION,
+} = defaults;
 
 const { ICON_SIZE, TEXT_SIZE } = sizes;
 
@@ -18,26 +26,27 @@ export default class Toaster {
     this.type = type;
     this.text = text;
     ({
-      width: this.width = 340,
-      height: this.height = 75,
+      width: this.width = DEFAULT_WIDTH,
+      height: this.height = DEFAULT_HEIGHT,
       title: this.title = title,
       color: this.color = color,
       textColor: this.textColor = textColor,
       textSize: this.textSize = TEXT_SIZE,
-      spacing: this.spacing = 0,
-      timing: this.timing = 0,
+      spacing: this.spacing = DEFAULT_SPACING,
+      timing: this.timing = DEFAULT_TIMING,
       icon: this.icon = icon,
       iconSize: this.iconSize = ICON_SIZE,
       id: this._id = Toaster.defineUniqId(),
       isAnimated: this._isAnimated = true,
-      animationName: this.animationName = 'side-push',
-      animationDuration: this.animationDuration = 1.5,
+      animationName: this.animationName = DEFAULT_ANIMATION,
+      animationDuration: this.animationDuration = DEFAULT_DURATION,
     } = properties);
   }
 
   get id() {
     return this._id;
   }
+
   set isAnimated(a) {
     this._isAnimated = Boolean(a);
   }

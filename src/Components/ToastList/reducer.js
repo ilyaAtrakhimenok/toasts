@@ -4,7 +4,6 @@ import uniqKey from '@/units/uniqKey';
 import Toast from '@/Components/Toast';
 
 export default function reducer(state, action) {
-  
   switch (action.type) {
     case 'addition':
       return [<Toast toaster={action.addElem} key={uniqKey()} />, ...state];
