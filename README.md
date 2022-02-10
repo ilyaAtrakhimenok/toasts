@@ -29,8 +29,8 @@ export default function App(){
 ```
 Get **addToast** function from a ToastContext in a Component
 ```jsx
-import React, { useContext } from 'react';
-import { ToastContext } from 'react-toasts-atr';
+import React, { useContext } from 'react'
+import { ToastContext } from 'react-toasts-atr'
 import Component from './Component'
 
 const config = {
