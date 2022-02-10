@@ -36,7 +36,7 @@ const config = {
     ...
 }
 
-export default function Button() {
+export default function Component() {
     const { addToast } = useContext(ToastContext);
     return (
             <button
