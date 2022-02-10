@@ -72,7 +72,6 @@ const increaseRemove = keyframes`
 `;
 
 export default function animation(name, position) {
-  console.log(name, position);
   switch (name) {
     case 'side-push':
       return sidePush[position];

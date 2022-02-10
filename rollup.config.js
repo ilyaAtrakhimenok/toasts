@@ -1,3 +1,4 @@
+const path = require('path')
 import babel from 'rollup-plugin-babel';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import external from 'rollup-plugin-peer-deps-external';
@@ -30,7 +31,7 @@ export default [
       alias({
         resolve: [".js", ".jsx", '/index.js', '/index.jsx'],
         entries: [
-          { find: '@', replacement: './src' },
+          { find: '@', replacement: path.resolve(__dirname, 'src') },
         ]
       }),
       babel({

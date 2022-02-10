@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import reducer from './reducer';
 
 export default function ToastList({ toastList }) {
+  
   const [toasts, dispatch] = useReducer(reducer, []);
 
   useEffect(() => {

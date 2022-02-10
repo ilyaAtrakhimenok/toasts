@@ -1,20 +1,21 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState, useMemo } from 'react';
 
-import ToastList from '../Components/ToastList';
-import usePortal from '../hooks/usePortal';
-import Toaster from '../Toaster';
-import ToastBoundary from '../ErrorBoundary/ToastBoundary';
+import ToastList from '@/Components/ToastList';
+import usePortal from '@/hooks/usePortal';
+import Toaster from '@/Toaster';
+import ToastBoundary from '@/ErrorBoundary/ToastBoundary';
 
 export const ToastContext = React.createContext();
 
 export function ToastProvider(props) {
+  
   const { children, position = 'bottom-right', limit = 5 } = props;
 
   const [toastList, setToastList] = useState([]);
 
   usePortal(position);
 
-  const addToast = (type, text, config) => {
+  const addToast = useCallback((type, text, config) => {
     setToastList((prevList) => {
       if (prevList.length < limit) {
         return [new Toaster(type, text, config || {}), ...prevList];
@@ -22,19 +23,27 @@ export function ToastProvider(props) {
         return prevList;
       }
     });
-  };
+  }, []);
 
-  const removeToast = (id) => {
+  const removeToast = useCallback((id) => {
     setToastList((prevList) => {
       return prevList.filter((item) => {
         return item.id !== id;
       });
     });
-  };
+  },[]);
+
+  const config = useMemo(()=>{
+    return {
+      addToast,
+      removeToast,
+      position
+    }
+  }, [position])
 
   return (
     <ToastContext.Provider
-      value={{ addToast, removeToast, position }}
+      value={config}
       {...props}
     >
       <ToastBoundary>

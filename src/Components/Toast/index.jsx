@@ -1,45 +1,31 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { useCallback } from 'react';
 
-import { ToastContext } from '../../Contexts/ToastContext';
+import { ToastContext } from '@/Contexts/ToastContext';
 
 import { ToastContainer, Icon, Text, Title, Cancel } from './style';
 
-export default function Toast({ obj }) {
+export default function Toast({ toaster }) {
+
   const { removeToast, position } = useContext(ToastContext);
   const [del, setDelition] = useState(false);
 
-  const { title, icon, text, id, textSize, iconSize } = obj;
-
-  let upX = 0;
-  let downX = 0;
+  const { title, icon, text, id, textSize, iconSize } = toaster;
 
   useEffect(() => {
-    const timerId = obj.timer(remove);
+    const timerId = toaster.timer(remove);
     return () => clearTimeout(timerId);
   }, []);
 
-  const remove = () => {
-    obj.remove(() => removeToast(id));
+  const remove = useCallback(() => {
+    toaster.remove(() => removeToast(id));
     setDelition(true);
-  };
-
-  const down = (e) => {
-    downX = e.clientX;
-  };
-
-  const up = (e) => {
-    upX = e.clientX;
-    if (upX - downX > 100) {
-      remove();
-    }
-  };
+  },[toaster]);
 
   return (
     <ToastContainer
-      config={obj}
+      config={toaster}
       position={position}
-      onPointerDown={down}
-      onPointerUp={up}
     >
       <Title>{title}</Title>
       <Icon icon={icon} iconSize={iconSize}></Icon>

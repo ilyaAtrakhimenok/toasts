@@ -1,4 +1,4 @@
-import { icons, colors, titles, textColors } from '../consts';
+import { icons, colors, titles, textColors } from '@/consts';
 
 const { ERROR_ICON, SUCCESS_ICON, WARNING_ICON, INFO_ICON } = icons;
 const { SUCCESS_COLOR, ERROR_COLOR, WARNING_COLOR, INFO_COLOR } = colors;
