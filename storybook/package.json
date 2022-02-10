@@ -19,6 +19,7 @@
     "babel-loader": "^8.2.3"
   },
   "dependencies": {
-    "react-toasts-atr": "^1.0.4"
+    "react-toasts-atr": "^1.0.4",
+    "styled-components": "^5.3.3"
   }
 }
